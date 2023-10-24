@@ -33,9 +33,9 @@ app.post("/", function (req,res){
       }
     ]
   }
-const jsonData = JSON.stringify(data); //This is the data to be sent to mailchimp;
+const jsonData = JSON.stringify(data); //This is the data to be sent to mailchimp needs to be stringied as per documentation from mailchimp;
 
-const url ="https://us14.api.mailchimp.com/3.0/lists/069ea7206a";
+const url ="https://us14.api.mailchimp.com/3.0/lists/069ea7206a"; //mailchimp main endpoint to include list id.
 const options = {
   method:"POST",
   auth:"johnny:dc0184c95218ffb5a006a2f4545984f1-us14" //auth to post to mailchimp.
@@ -46,7 +46,7 @@ const options = {
 //in order for us to send the/post the info in mailchimp we need save that request in a constant ie request.
 //later on we can use that constant request to send things over to the mailchimp server by calling request.write.
 
-const request = https.request(url,options, function (response){ //http.request to post data to mailchimp
+const request = https.request(url,options, function (response){ //http.request to post data to mailchimp / response from the mailchimp server
 
   if (response.statusCode === 200){
     res.sendFile(__dirname + "/success.html")
@@ -54,7 +54,7 @@ const request = https.request(url,options, function (response){ //http.request t
     res.sendFile(__dirname + "/failure.html")
   }
 
-  response.on("data",function(data){ //mail chimp send back the response data
+  response.on("data",function(data){ //checking what data mailchimp server has sent us
     console.log(JSON.parse(data))
   })
 
@@ -74,7 +74,7 @@ app.listen(process.env.PORT || 3000,function(){
 })
 
 //API key
-// dc0184c95218ffb5a006a2f4545984f1-us14
+// dc0184c95218ffb5a006a2f4545984f1-us14 ///remeber to change endpoint with us14
 
 //List id
 // 069ea7206a
