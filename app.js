@@ -79,8 +79,3 @@ app.listen(port, function() {
   console.log("Server has started Successfully");
 });
 
-//API key
-// 50ca2e460e6788150d938596479ac1b1-us14 ///remeber to change endpoint with us14
-
-//List id
-// 069ea7206a
