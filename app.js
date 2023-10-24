@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
+require('dotenv').config()
 
 const app = express();
 app.use(express.static("public"));
@@ -35,10 +36,10 @@ app.post("/", function (req,res){
   }
 const jsonData = JSON.stringify(data); //This is the data to be sent to mailchimp needs to be stringied as per documentation from mailchimp;
 
-const url ="https://us14.api.mailchimp.com/3.0/lists/069ea7206a"; //mailchimp main endpoint to include list id.
+const url = process.env.URL //mailchimp main endpoint to include list id.
 const options = {
   method:"POST",
-  auth:"johnny:dc0184c95218ffb5a006a2f4545984f1-us14" //auth to post to mailchimp.
+  auth: process.env.AUTH //auth to post to mailchimp.
 }
 
 
@@ -79,7 +80,7 @@ app.listen(port, function() {
 });
 
 //API key
-// dc0184c95218ffb5a006a2f4545984f1-us14 ///remeber to change endpoint with us14
+// 50ca2e460e6788150d938596479ac1b1-us14 ///remeber to change endpoint with us14
 
 //List id
 // 069ea7206a
