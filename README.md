@@ -17,4 +17,4 @@ Run this project using npm.
 5) You can now go to your browser and enter "http://localhost:3000/" to view the application
 
 
-NOTE*This project has also been uploaded to Heroku, and you can simply use the link - https://limitless-springs-05356-347ba62dad8e.herokuapp.com/ - to view the application on your Web Browser. However, any users that you add in this link will not posted into your mailchimp account but it will be posted into mine , this because the app uploaded in heroku has my mailchimp api credentials. 
+NOTE*This project has also been uploaded to Heroku, and you can simply use the link -  https://my-newsletter-mailchimp-api-a60166cf13cc.herokuapp.com/ - to view the application on your Web Browser. However, any users that you add in this link will not posted into your mailchimp account but it will be posted into mine , this because the app uploaded in heroku has my mailchimp api credentials. 
